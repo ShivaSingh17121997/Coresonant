@@ -11,3 +11,83 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* AddTodo component styles */
+.add-todo-form {
+  margin: 20px 0 20px 0;
+  
+}
+
+.new-task-input {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-task-button {
+  padding: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* TodoItem component styles */
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 600px;
+ 
+  column-gap: 20px;
+  
+  padding:10px;
+  /* border: 0.5px solid rgb(209, 209, 209); */
+ 
+  margin: auto;
+  
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.task-title {
+  flex-grow: 1;
+  margin-right: 8px;
+}
+
+.edit-input {
+  margin-right: 8px;
+  padding: 4px;
+}
+
+.edit-button,
+.save-button,
+.delete-button {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.edit-button {
+  background-color: #46aafc;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.delete-button {
+  background-color: #fe6358;
+  color: #fff;
+  border-radius: 8px;
+
+}
