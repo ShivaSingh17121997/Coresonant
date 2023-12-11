@@ -4,9 +4,9 @@ import AddTodo from './AddTodo';
 
 const TodoList = () => {
     const [tasks, setTasks] = useState([]);
+    const [filter, setFilter] = useState('all'); // 'all', 'completed', 'notCompleted'
 
     useEffect(() => {
-       
         fetch('https://jsonplaceholder.typicode.com/users/1/todos')
             .then((response) => response.json())
             .then((data) => setTasks(data))
@@ -14,7 +14,6 @@ const TodoList = () => {
     }, []);
 
     const addTask = (newTask) => {
-        // Add 
         setTasks([...tasks, newTask]);
     };
 
@@ -27,7 +26,6 @@ const TodoList = () => {
     };
 
     const editTask = (taskId, newTaskName) => {
-        // Edit the task 
         setTasks((prevTasks) =>
             prevTasks.map((task) =>
                 task.id === taskId ? { ...task, title: newTaskName } : task
@@ -36,14 +34,25 @@ const TodoList = () => {
     };
 
     const deleteTask = (taskId) => {
-        // Delete a task 
         setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
     };
+
+    const filteredTasks = tasks.filter((task) => {
+        if (filter === 'all') return true;
+        if (filter === 'completed') return task.completed;
+        if (filter === 'notCompleted') return !task.completed;
+        return true;
+    });
 
     return (
         <div>
             <AddTodo addTask={addTask} />
-            {tasks.map((task) => (
+            <div>
+                <button onClick={() => setFilter('all')}>All</button>
+                <button onClick={() => setFilter('completed')}>Completed</button>
+                <button onClick={() => setFilter('notCompleted')}>Not Completed</button>
+            </div>
+            {filteredTasks.map((task) => (
                 <TodoItem
                     key={task.id}
                     task={task}
@@ -52,12 +61,7 @@ const TodoList = () => {
                     deleteTask={deleteTask}
                 />
             ))}
-
-            <div>
-                
-            </div>
         </div>
-        
     );
 };
 
