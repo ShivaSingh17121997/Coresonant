@@ -45,11 +45,14 @@ const TodoList = () => {
     });
 
     return (
+
         <div>
             <AddTodo addTask={addTask} />
             <div>
                 <button onClick={() => setFilter('all')}>All</button>
+
                 <button onClick={() => setFilter('completed')}>Completed</button>
+
                 <button onClick={() => setFilter('notCompleted')}>Not Completed</button>
             </div>
             {filteredTasks.map((task) => (
@@ -61,6 +64,7 @@ const TodoList = () => {
                     deleteTask={deleteTask}
                 />
             ))}
+
         </div>
     );
 };
