@@ -6,7 +6,9 @@ const AddTodo = ({ addTask }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (newTask.trim() !== '') {
+        if (newTask.trim() == '') {
+            alert("Enter the Todo first")
+        } else {
             addTask({
                 id: Date.now(),
                 title: newTask,

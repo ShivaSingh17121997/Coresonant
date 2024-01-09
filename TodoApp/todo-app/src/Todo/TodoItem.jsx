@@ -25,29 +25,26 @@ const TodoItem = ({ task, toggleCompletion, editTask, deleteTask }) => {
             />
             {isEditing ? (
                 <>
-                    <input
-                        type="text"
-                        value={editedTask}
-                        onChange={(e) => setEditedTask(e.target.value)}
-                        className="edit-input"
-                    />
-                    <button onClick={handleSave} className="save-button">
-                        Save
-                    </button>
+                    <input type="text" value={editedTask} onChange={(e) => setEditedTask(e.value)} className="edit-input" />
+
+                    <button onClick={handleSave} className="save-button">  Save </button>
+
                 </>
             ) : (
                 <>
                     <span
                         className="task-title"
-                        style={{ textDecoration: task.completed ? 'line-through' : 'none' }}
-                    >
+                        style={{ textDecoration: task.completed ? 'line-through' : 'none' }}  >
                         {task.title}
                     </span>
+
                     <button onClick={handleEdit} className="edit-button">
                         Edit
                     </button>
+
                 </>
             )}
+            
             <button onClick={() => deleteTask(task.id)} className="delete-button">
                 Delete
             </button>
