@@ -41,7 +41,7 @@
 // console.log(search)
 
 
-let a = [1, 3, 5, 4,5,  3]
+let a = [1, 3, 5, 4,5,4,  3]
 
 function duplicates(a) {
 
@@ -55,8 +55,8 @@ function duplicates(a) {
        
     }
     console.log(count)
-   
-
 }
 
 duplicates(a)
+
+
