@@ -63,17 +63,17 @@ duplicates(a)
 
 let newArr = [3, 3, 4, 5, 3, 5, 9, 6, 7, 5, 77, 8]
 
-function removeDuplicates (a) {
+function removeDuplicates(a) {
     let arr = [];
-    for(let i=0; i<a.length; i++){
+    for (let i = 0; i < a.length; i++) {
         let duplicate = false;
-        for(let j=i+1; j<a.length; j++){
-            if(a[i] === a[j]){
+        for (let j = i + 1; j < a.length; j++) {
+            if (a[i] === a[j]) {
                 duplicate = true;
                 break;
             }
         }
-        if(!duplicate){
+        if (!duplicate) {
             arr.push(a[i])
         }
     }
@@ -82,30 +82,33 @@ function removeDuplicates (a) {
 
 removeDuplicates(newArr)
 
+// optimized remove duplicate
+function removeDuplicatesele(a) {
 
-// let newArr = [3, 3, 4, 5, 3, 5, 9, 6, 7, 5, 77, 8];
+    const arr = [...new Set(a)]
+    console.log(arr)
 
-// function removeDuplicates(newArr) {
-//   let arr = [];
+}
+removeDuplicatesele(newArr)
 
-//   for (let i = 0; i < newArr.length; i++) {
-//     let isDuplicate = false;
 
-//     // Check if the element is a duplicate
-//     for (let j = 0; j < arr.length; j++) {
-//       if (newArr[i] === arr[j]) {
-//         isDuplicate = true;
-//         break;
-//       }
-//     }
 
-//     // If not a duplicate, add it to the array
-//     if (!isDuplicate) {
-//       arr.push(newArr[i]);
-//     }
-//   }
+// common element
+let arr1 = [3, 4, 5, 6, 6]
+let arr2 = [3, 5, 9, 6]
 
-//   console.log(arr);
-// }
 
-// removeDuplicates(newArr);
+function commonElement(a, b) {
+
+    let set1 = new Set(a)
+    let set2 = new Set(b)
+
+    const commonElement = [...set1].filter((ele) => set2.has(ele))
+    console.log(commonElement)
+
+}
+
+commonElement(arr1, arr2)
+
+
+
