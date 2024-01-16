@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color Change</title>
 </head>
 
 <body>
 
-    <h1>counter</h1>
-    <button id="btn"> Start Countdown </button>
-    <div id="timer"></div>
+    <h1>Color Change</h1>
+    <button id="btn">Change color</button>
+
+    <script>
+        let button = document.querySelector("#btn")
+
+        button.addEventListener("click", () => {
+
+            document.body.style.backgroundColor = getRandomColor()
+            
+
+        })
+
+        function getRandomColor() {
+            return "#" + Math.floor(Math.random() * 13434334).toString(16)
+            
+        }
+    </script>
+
 </body>
-<script>
-
-    document.querySelector("btn").addEventListener("click", () => {
-        startCountDown(10)
-    })
-
-    function startCountDown(seconds) {
-
-    }
-
-
-</script>
 
 </html>
