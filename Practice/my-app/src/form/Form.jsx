@@ -11,12 +11,8 @@ export default function Form() {
         console.log(name, email, message)
 
     }
-
-
     return (
-
         <div>
-
             <form onSubmit={handleSubmit} >
                 <input value={name} onChange={(e)=> setName(e.target.value)} type="text" placeholder='enter name' /> <br />
 
@@ -29,3 +25,5 @@ export default function Form() {
         </div>
     )
 }
+
+// jai ram

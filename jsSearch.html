@@ -28,15 +28,25 @@
         { name: "Nexus 7" },
     ]
 
-   const searchTerm = document.querySelector("InputVal").value;
+    const searchInput = document.getElementById("InputVal");
+    const resultList = document.getElementById("OutputDiv")
 
-   function DisplaySearch () {
+    const searchTerm = searchInput.value.toLocaleLowerCase();
 
-    outputDiv = document.querySelector("#OutputDiv")
+    searchInput.addEventListener("input",function(){
+        const filterData = data.filter((item => item.name.toLocaleLowerCase().includes(searchTerm)))
+    })
 
-    let div = document.createElement("div");
+    function renderResults (result){
+        resultList.innerHTML= "";
+        
+        results.forEach((item) => {
+            const listItem = document.createElement("li")
+            listItem.textContent= item.name;
+            resultList.appendChild(listItem)
+        })
+    }
 
-   }
 
 </script>
 
