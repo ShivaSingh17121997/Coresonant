@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function Sort() {
     const [product, setProduct] = useState([])
     const [sortedProduct, setSortedProduct] = useState([])
-    const [EditingProduct, setEditingProduct] = useState({id:null, category:"", price:0})
+    const [EditingProduct, setEditingProduct] = useState({ id: null, category: "", price: 0 })
 
     useEffect(() => {
         fetch((`https://fakestoreapi.com/products`))
@@ -44,7 +44,7 @@ export default function Sort() {
     const handleEdit = (id) => {
 
         const editItem = sortedProduct.find((item) => item.id === id);
-        setEditingProduct({id, category:editItem.category, price: editItem.price})
+        setEditingProduct({ id, category: editItem.category, price: editItem.price })
 
 
     }
@@ -52,7 +52,7 @@ export default function Sort() {
     const handleSaveEdit = () => {
         const updateData = sortedProduct.map((item) => item.id == EditingProduct.id ? EditingProduct : item);
         setProduct(updateData)
-        setEditingProduct({id:null, category:'', price:0})
+        setEditingProduct({ id: null, category: '', price: 0 })
         alert("Product updated")
     }
 
@@ -77,14 +77,14 @@ export default function Sort() {
                             {
                                 EditingProduct.id === item.id && (
                                     <>
-                                    <input type="text " placeholder='category' value={EditingProduct.category } onChange={(e) => setEditingProduct({...EditingProduct, category:e.target.value})  } />
-                                    
-                                    <input type="number"  placeholder='price' value={EditingProduct.price} onChange={(e) => setEditingProduct({...EditingProduct, price: e.target.value})} />
+                                        <input type="text " placeholder='category' value={EditingProduct.category} onChange={(e) => setEditingProduct({ ...EditingProduct, category: e.target.value })} />
 
-                                    <button onClick={handleSaveEdit} >Save</button>
+                                        <input type="number" placeholder='price' value={EditingProduct.price} onChange={(e) => setEditingProduct({ ...EditingProduct, price: e.target.value })} />
+
+                                        <button onClick={handleSaveEdit} >Save</button>
 
                                     </>
-                                    
+
                                 )
                             }
                         </div>
