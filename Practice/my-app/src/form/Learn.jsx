@@ -58,16 +58,16 @@ export default function Learn() {
 
     return (
         <div>
-
+            //search input
             <div>
                 <input onChange={handleSearch} type="text" placeholder='Search...' />
             </div>
-
+            // sorting
             <div  >
                 <button onClick={handleAsc} >Asc</button>
                 <button onClick={handleDesc} >Desc</button>
             </div>
-
+        // mapping product
             <div >
                 {product.map((item) => {
                     return (< div style={{ border: "1px solid black", padding: "20px", margin: "20px" }} key={item.id}>
