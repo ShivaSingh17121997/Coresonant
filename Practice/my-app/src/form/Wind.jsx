@@ -29,7 +29,7 @@ export default function Wind() {
             </div>
             <div>
                 {value?.map((item, index) => (
-                    // You should include a unique key for each element when using map.
+                    // You should include a unique key for each element when using map. jai shree ram
                     <h3 key={index}>{item.name}</h3>
                 ))}
             </div>
